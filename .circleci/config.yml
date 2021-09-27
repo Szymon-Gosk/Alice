@@ -20,10 +20,6 @@ jobs:
       - run:
           name: Build and test
           command: mvn -B clean package
-      # Then run your tests!
-      - run:
-          name: Test
-          command: mvn test
 
 workflows:
   # Below is the definition of your workflow.
