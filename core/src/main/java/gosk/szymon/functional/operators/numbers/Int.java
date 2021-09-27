@@ -1,14 +1,12 @@
 package gosk.szymon.functional.operators.numbers;
 
 import gosk.szymon.functional.Temporary;
-import gosk.szymon.functional.operators.Evaluable;
 import gosk.szymon.functional.operators.Operator;
-import gosk.szymon.functional.operators.bi.Add;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;
 
-public class Int implements Operator, Evaluable {
+public class Int implements Operator {
 
     private final BigInteger value;
 
@@ -25,23 +23,12 @@ public class Int implements Operator, Evaluable {
     }
 
     @Override
-    public Int apply(Operator operator) {
-        return this;
-    }
-
-    @Override
     public Number evaluate(Number number) {
         return value;
     }
 
     public BigInteger getValue() {
         return value;
-    }
-
-    @Temporary
-    @Override
-    public @NotNull String debugString() {
-        return "INT";
     }
 
     @Override
@@ -55,6 +42,12 @@ public class Int implements Operator, Evaluable {
         if (o == null || getClass() != o.getClass()) return false;
         Int that = (Int) o;
         return this.value.equals(that.value);
+    }
+
+    @Temporary
+    @Override
+    public @NotNull String debugString() {
+        return "INT";
     }
 
 }
