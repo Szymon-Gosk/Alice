@@ -35,6 +35,7 @@ class FunctionTreeTest {
         assertEquals(generateMediumTree(), generateMediumTree());
         assertEquals(generateLargeTree(), generateLargeTree());
 
+
         assertNotEquals(generateSingletonTree(), generateMediumTree());
         assertNotEquals(generateSingletonTree(), Int(3).getTree());
         assertNotEquals(generateLargeTree(), generateMediumTree());
