@@ -2,14 +2,13 @@ package gosk.szymon.functional.operators.bi;
 
 import gosk.szymon.functional.Temporary;
 import gosk.szymon.functional.WIP;
-import gosk.szymon.functional.operators.BiEvaluable;
 import gosk.szymon.functional.operators.BiOperator;
 import gosk.szymon.functional.operators.Operator;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;
 
-public class Multiply implements BiOperator, BiEvaluable {
+public class Multiply implements BiOperator {
 
     @Override
     public Operator apply(Operator op1, Operator op2) {

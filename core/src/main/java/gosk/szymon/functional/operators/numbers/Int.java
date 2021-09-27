@@ -1,14 +1,12 @@
 package gosk.szymon.functional.operators.numbers;
 
 import gosk.szymon.functional.Temporary;
-import gosk.szymon.functional.operators.Evaluable;
 import gosk.szymon.functional.operators.Operator;
-import gosk.szymon.functional.operators.bi.Add;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;
 
-public class Int implements Operator, Evaluable {
+public class Int implements Operator {
 
     private final BigInteger value;
 

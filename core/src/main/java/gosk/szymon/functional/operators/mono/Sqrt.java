@@ -2,13 +2,12 @@ package gosk.szymon.functional.operators.mono;
 
 import gosk.szymon.functional.Temporary;
 import gosk.szymon.functional.WIP;
-import gosk.szymon.functional.operators.Evaluable;
 import gosk.szymon.functional.operators.Operator;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;
 
-public class Sqrt implements Operator, Evaluable {
+public class Sqrt implements Operator {
 
     @Override
     public Operator apply(Operator operator) {
