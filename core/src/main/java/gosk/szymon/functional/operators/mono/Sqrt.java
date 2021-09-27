@@ -1,21 +1,15 @@
 package gosk.szymon.functional.operators.mono;
 
 import gosk.szymon.functional.Temporary;
-import gosk.szymon.functional.WIP;
-import gosk.szymon.functional.operators.Evaluable;
+import gosk.szymon.functional.WorkInProgress;
 import gosk.szymon.functional.operators.Operator;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;
 
-public class Sqrt implements Operator, Evaluable {
+public class Sqrt implements Operator {
 
-    @Override
-    public Operator apply(Operator operator) {
-        return null;
-    }
-
-    @WIP
+    @WorkInProgress
     @Override
     public Number evaluate(Number number) {
         if(number instanceof BigInteger bigInteger) {
@@ -23,12 +17,6 @@ public class Sqrt implements Operator, Evaluable {
         } else {
             return null;
         }
-    }
-
-    @Temporary
-    @Override
-    public @NotNull String debugString() {
-        return "SQRT";
     }
 
     @Override
@@ -40,6 +28,12 @@ public class Sqrt implements Operator, Evaluable {
     public boolean equals(Object o) {
         if (this == o) return true;
         return o != null && getClass() == o.getClass();
+    }
+
+    @Temporary
+    @Override
+    public @NotNull String debugString() {
+        return "SQRT";
     }
 
 }
