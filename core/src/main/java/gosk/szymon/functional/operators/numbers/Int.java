@@ -23,23 +23,12 @@ public class Int implements Operator {
     }
 
     @Override
-    public Int apply(Operator operator) {
-        return this;
-    }
-
-    @Override
     public Number evaluate(Number number) {
         return value;
     }
 
     public BigInteger getValue() {
         return value;
-    }
-
-    @Temporary
-    @Override
-    public @NotNull String debugString() {
-        return "INT";
     }
 
     @Override
@@ -53,6 +42,12 @@ public class Int implements Operator {
         if (o == null || getClass() != o.getClass()) return false;
         Int that = (Int) o;
         return this.value.equals(that.value);
+    }
+
+    @Temporary
+    @Override
+    public @NotNull String debugString() {
+        return "INT";
     }
 
 }
