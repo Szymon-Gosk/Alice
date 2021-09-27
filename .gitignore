@@ -66,3 +66,4 @@ lib/
 
 # Expired
 deprecated_old_functional/
+**/[Tt]est.java
