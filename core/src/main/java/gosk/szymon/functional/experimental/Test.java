@@ -1,5 +1,6 @@
-package gosk.szymon.functional;
+package gosk.szymon.functional.experimental;
 
+import gosk.szymon.functional.Temporary;
 import gosk.szymon.functional.structural.ValueBuilder;
 
 import static gosk.szymon.functional.facades.Values.Frac;
