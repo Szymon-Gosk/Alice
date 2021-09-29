@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class FunctionTreeTest {
 
     @Test
-    void shouldReturnCorrectTreeHeight() {
+    void shouldReturnCorrectTreeSize() {
         assertEquals(1, generateSingletonTree().size());
         assertEquals(4, generateSmallTree().size());
         assertEquals(9, generateMediumTree().size());
@@ -21,7 +21,7 @@ class FunctionTreeTest {
     }
 
     @Test
-    void shouldReturnCorrectTreeSize() {
+    void shouldReturnCorrectTreeHeight() {
         assertEquals(0, generateSingletonTree().height());
         assertEquals(2, generateSmallTree().height());
         assertEquals(3, generateMediumTree().height());
