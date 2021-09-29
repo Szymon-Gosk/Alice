@@ -63,7 +63,3 @@ logs/
 !**/src/main/**/target/
 !**/src/test/**/target/
 lib/
-
-# Expired
-deprecated_old_functional/
-**/[Tt]est.java
