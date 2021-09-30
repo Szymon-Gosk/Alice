@@ -68,19 +68,23 @@ class NodeImpl implements Node {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NodeImpl that = (NodeImpl) o;
-        if ((this.hasLeft() && !that.hasLeft()) || (!this.hasLeft() && that.hasLeft())) {
-            return false;
-        }
-        if ((this.hasRight() && !that.hasRight()) || (!this.hasRight() && that.hasRight())) {
-            return false;
-        }
         if (!this.nodeContext.equals(that.getNodeContext())) return false;
+        final boolean thisHasLeft = this.hasLeft();
+        final boolean thatHasLeft = that.hasLeft();
+        final boolean thisHasRight = this.hasRight();
+        final boolean thatHasRight = that.hasRight();
         boolean result = true;
-        if (this.hasLeft()) {
+        if (thisHasLeft) {
+            if(!thatHasLeft) return false;
             result = this.getLeft().get().equals(that.getLeft().get());
+        } else if(thatHasLeft) {
+            return false;
         }
-        if (this.hasRight()) {
+        if (thisHasRight) {
+            if(!thatHasRight) return false;
             result = result && this.getRight().get().equals(that.getRight().get());
+        } else if (thatHasRight) {
+            return false;
         }
         return result;
     }
