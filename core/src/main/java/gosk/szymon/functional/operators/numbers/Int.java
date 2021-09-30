@@ -27,6 +27,11 @@ public class Int implements Operator {
         return value;
     }
 
+    @Override
+    public boolean isNumber() {
+        return true;
+    }
+
     public BigInteger getValue() {
         return value;
     }

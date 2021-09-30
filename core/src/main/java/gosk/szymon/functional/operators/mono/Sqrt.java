@@ -20,6 +20,11 @@ public class Sqrt implements Operator {
     }
 
     @Override
+    public boolean isNumber() {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return "Sqrt{}";
     }

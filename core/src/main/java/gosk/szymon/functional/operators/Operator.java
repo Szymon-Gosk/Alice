@@ -6,6 +6,8 @@ public interface Operator {
 
     Number evaluate(Number number);
 
+    boolean isNumber();
+
     default @NotNull String debugString() {
         return "OPERATOR";
     }

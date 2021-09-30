@@ -36,6 +36,11 @@ public class Decimal implements Operator {
         return value;
     }
 
+    @Override
+    public boolean isNumber() {
+        return true;
+    }
+
     public BigDecimal getValue() {
         return value;
     }
