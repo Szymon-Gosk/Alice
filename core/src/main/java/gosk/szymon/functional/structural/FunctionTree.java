@@ -28,36 +28,6 @@ public class FunctionTree extends AbstractFunctionTree {
     }
 
     /**
-     * Returns root node of <code>this</code> tree.
-     *
-     * @return root node of <code>this</code> tree
-     */
-    @Override
-    public @NotNull NodeImpl getRoot() {
-        return root;
-    }
-
-    /**
-     * Returns height of <code>this</code> tree. Tree consisting of only root has height of 0.
-     *
-     * @return height of <code>this</code> tree
-     */
-    @Override
-    public int height() {
-        return height;
-    }
-
-    /**
-     * Returns numbers of nodes in this tree.
-     *
-     * @return size of this tree
-     */
-    @Override
-    public int size() {
-        return size;
-    }
-
-    /**
      * Appends a new node with specified operator at the top if <code>this</code> tree - the newly appended node becomes
      * the new root.
      *
@@ -96,8 +66,39 @@ public class FunctionTree extends AbstractFunctionTree {
      *
      * @return <code>Number</code> value of <code>this</code> tree
      */
-    public Number evaluate() {
+    public @NotNull Number evaluate() {
         return evaluate(root);
+    }
+
+
+    /**
+     * Returns root node of <code>this</code> tree.
+     *
+     * @return root node of <code>this</code> tree
+     */
+    @Override
+    public @NotNull NodeImpl getRoot() {
+        return root;
+    }
+
+    /**
+     * Returns height of <code>this</code> tree. Tree consisting of only root has height of 0.
+     *
+     * @return height of <code>this</code> tree
+     */
+    @Override
+    public int height() {
+        return height;
+    }
+
+    /**
+     * Returns numbers of nodes in this tree.
+     *
+     * @return size of this tree
+     */
+    @Override
+    public int size() {
+        return size;
     }
 
     @Override
