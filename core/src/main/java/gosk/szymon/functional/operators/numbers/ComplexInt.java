@@ -43,21 +43,21 @@ public class ComplexInt implements BiOperator {
 
     @Override
     public String toString() {
-        return "Complex{real=" + real + ", imaginary=" + imaginary + "}";
+        return "ComplexInt{real=" + real + ", imaginary=" + imaginary + "}";
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        return o != null && getClass() == o.getClass();
+        if (o == null || getClass() != o.getClass()) return false;
+        ComplexInt that = (ComplexInt) o;
+        return this.real.equals(that.real) && this.imaginary.equals(that.imaginary);
     }
 
     @Temporary
     @Override
     public @NotNull String debugString() {
-        return "COMPLEX";
+        return "COMPLEX_INT";
     }
-
-
 
 }

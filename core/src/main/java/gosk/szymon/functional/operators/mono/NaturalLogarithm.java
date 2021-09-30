@@ -14,6 +14,11 @@ public class NaturalLogarithm implements Operator {
     }
 
     @Override
+    public boolean isNumber() {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return "NaturalLogarithm{}";
     }

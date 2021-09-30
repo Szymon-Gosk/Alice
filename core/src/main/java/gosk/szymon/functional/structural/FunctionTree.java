@@ -3,10 +3,10 @@ package gosk.szymon.functional.structural;
 import gosk.szymon.functional.Temporary;
 import gosk.szymon.functional.operators.BiOperator;
 import gosk.szymon.functional.operators.Operator;
+import gosk.szymon.functional.operators.numbers.Decimal;
 import gosk.szymon.functional.operators.numbers.Int;
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigInteger;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -21,8 +21,9 @@ public class FunctionTree extends AbstractFunctionTree {
     private int height;
     private int size;
 
-    public FunctionTree(@NotNull BigInteger value) {
-        root = new NodeImpl(new NodeContext(new Int(value), 0));
+    public FunctionTree(@NotNull Operator operator) {
+        if(!operator.isNumber()) throw new IllegalArgumentException("Tree can be instantiated only from a number");
+        root = new NodeImpl(new NodeContext(operator, 0));
         height = 0;
         size = 1;
     }
@@ -260,7 +261,11 @@ public class FunctionTree extends AbstractFunctionTree {
         @Temporary
         public String debugString() {
             final String contextString = operator == null ? biOperator.debugString() : operator.debugString();
-            final String suffix = operator == null ? "(?,?)" : (operator instanceof Int m ? "(" + m.getValue() + ")" : "(?)");
+            final String suffix = operator == null
+                    ? "(?,?)"
+                    : (operator instanceof Int m
+                        ? "(" + m.getValue() + ")"
+                        : (operator instanceof Decimal d ? "(" + d.getValue() + ")" : "(?)"));
             return contextString + suffix;
         }
 

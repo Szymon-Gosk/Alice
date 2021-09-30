@@ -3,6 +3,7 @@ package gosk.szymon.functional.facades;
 import gosk.szymon.functional.structural.ValueBuilder;
 import org.jetbrains.annotations.NotNull;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Values {
@@ -10,7 +11,7 @@ public class Values {
     private Values() {}
 
     public static @NotNull ValueBuilder Int(long v) {
-        return Int(new BigInteger("" + v));
+        return Int("" + v);
     }
 
     public static @NotNull ValueBuilder Int(@NotNull String v) {
@@ -18,6 +19,26 @@ public class Values {
     }
 
     public static @NotNull ValueBuilder Int(@NotNull BigInteger v) {
+        return new ValueBuilder(v);
+    }
+
+    public static @NotNull ValueBuilder Decimal(long v) {
+        return new ValueBuilder(new BigInteger("" + v));
+    }
+
+    public static @NotNull ValueBuilder Decimal(double v) {
+        return Decimal("" + v);
+    }
+
+    public static @NotNull ValueBuilder Decimal(String s) {
+        return Decimal(new BigDecimal(s));
+    }
+
+    public static @NotNull ValueBuilder Decimal(BigDecimal v) {
+        return new ValueBuilder(v);
+    }
+
+    public static @NotNull ValueBuilder Decimal(BigInteger v) {
         return new ValueBuilder(v);
     }
 

@@ -6,8 +6,11 @@ import gosk.szymon.functional.operators.bi.Fraction;
 import gosk.szymon.functional.operators.bi.Multiply;
 import gosk.szymon.functional.operators.bi.Subtract;
 import gosk.szymon.functional.operators.mono.Sqrt;
+import gosk.szymon.functional.operators.numbers.Decimal;
+import gosk.szymon.functional.operators.numbers.Int;
 import org.jetbrains.annotations.NotNull;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class ValueBuilder {
@@ -15,7 +18,15 @@ public class ValueBuilder {
     private final FunctionTree tree;
 
     public ValueBuilder(@NotNull BigInteger value) {
-        tree = new FunctionTree(value);
+        tree = new FunctionTree(new Int(value));
+    }
+
+    public ValueBuilder(@NotNull BigDecimal value) {
+        if(value.stripTrailingZeros().scale() <= 0) {
+            tree = new FunctionTree(new Int(value.toBigInteger()));
+        } else {
+            tree = new FunctionTree(new Decimal(value));
+        }
     }
 
     @NotNull FunctionTree getTree() {
