@@ -1,4 +1,4 @@
-package gosk.szymon.objects.numbers;
+package gosk.szymon.experimental.numbers;
 
 public abstract class Fraction {
 
