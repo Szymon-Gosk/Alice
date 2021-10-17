@@ -1,4 +1,4 @@
-package gosk.szymon.general;
+package gosk.szymon.experimental.general;
 
 public interface Renderable {
 

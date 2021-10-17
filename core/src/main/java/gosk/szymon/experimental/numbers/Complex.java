@@ -1,6 +1,6 @@
-package gosk.szymon.objects.numbers;
+package gosk.szymon.experimental.numbers;
 
-import gosk.szymon.general.Renderable;
+import gosk.szymon.experimental.general.Renderable;
 
 import java.util.List;
 import java.util.Objects;
