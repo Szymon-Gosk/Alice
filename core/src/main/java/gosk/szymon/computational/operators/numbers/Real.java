@@ -1,0 +1,53 @@
+package gosk.szymon.computational.operators.numbers;
+
+import gosk.szymon.computational.Development;
+import gosk.szymon.computational.operators.Operator;
+import org.jetbrains.annotations.NotNull;
+
+import java.math.BigDecimal;
+
+public class Real implements Operator {
+
+    private final BigDecimal value;
+
+    public Real(BigDecimal value) {
+        this.value = value;
+    }
+
+    @Override
+    public @NotNull Number evaluate(@NotNull Number @NotNull... arguments) {
+        if(arguments.length != getOrder()) {
+            throw new IllegalArgumentException("Number of arguments must be equal to order of this operator");
+        }
+        return value;
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+
+    @Override
+    public boolean isNumber() {
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Real{value=" + value + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Real that)) return false;
+        return this.value.equals(that.value);
+    }
+
+    @Override
+    @Development
+    public @NotNull String debugString() {
+        return "REAL(" + value + ")";
+    }
+
+}

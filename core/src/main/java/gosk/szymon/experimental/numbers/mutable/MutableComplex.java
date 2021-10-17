@@ -1,6 +1,6 @@
-package gosk.szymon.objects.numbers.mutable;
+package gosk.szymon.experimental.numbers.mutable;
 
-import gosk.szymon.objects.numbers.Complex;
+import gosk.szymon.experimental.numbers.Complex;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
