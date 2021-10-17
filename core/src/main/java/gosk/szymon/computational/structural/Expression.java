@@ -88,6 +88,16 @@ public class Expression extends AbstractExpressionTree {
         return evaluate(getRoot());
     }
 
+    private @NotNull Number evaluate(@NotNull Node node) {
+        return switch (node.getOrder()) {
+            case 0 -> node.getOperator().evaluate();
+            case 1 -> node.getOperator().evaluate(evaluate(node.getLeft()));
+            case 2 -> node.getOperator().evaluate(evaluate(node.getLeft()), evaluate(node.getRight()));
+            default -> throw new IllegalArgumentException("");
+        };
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,15 +108,6 @@ public class Expression extends AbstractExpressionTree {
     @Override
     public int hashCode() {
         return Objects.hash(root, height, size);
-    }
-
-    private @NotNull Number evaluate(@NotNull Node node) {
-        return switch (node.getOrder()) {
-            case 0 -> node.getOperator().evaluate();
-            case 1 -> node.getOperator().evaluate(evaluate(node.getLeft()));
-            case 2 -> node.getOperator().evaluate(evaluate(node.getLeft()), evaluate(node.getRight()));
-            default -> throw new IllegalArgumentException("");
-        };
     }
 
     private void incrementLevelsFrom(@NotNull Node node) {
